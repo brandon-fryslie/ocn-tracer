@@ -1,0 +1,12 @@
+{
+  "name": "ocn-tracer",
+  "version": "0.0.1",
+  "main": "main.js",
+  "scripts": {
+    "start": "./node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron ."
+  },
+  "dependencies": {
+    "coffee-script": "^1.9.2",
+    "electron-prebuilt": "^0.25.1"
+  }
+}

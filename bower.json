@@ -1,0 +1,12 @@
+{
+  "name": "ocn-tracer",
+  "version": "0.0.1",
+  "main": "main.css",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "react": "~0.13.2"
+  }
+}
