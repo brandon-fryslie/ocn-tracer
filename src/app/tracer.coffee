@@ -11,7 +11,6 @@
 # print
 
 
-
 fs = require('fs')
 util = require('util')
 stream = require('stream')
@@ -78,23 +77,23 @@ contents = fs.createReadStream(LOGPATH)
 
 
 
-      for trace_id, events of TRACES
-        print_trace trace_id, events
-      )
+      # for trace_id, events of TRACES
+      #   print_trace trace_id, events
+      # )
 )
 
 
 # PRINT TRACES
 
-print_trace = (trace_id, events) ->
-  console.log "Viewing trace: #{trace_id}".bold.magenta
+format_trace = (trace_id, events) ->
+  output = "Viewing trace: #{trace_id}"
   for e in events
-    print_event e
-  console.log()
+    output += format_output e
+  output += "\n"
 
-print_event = (e) ->
+format_output = (e) ->
 
-  output = "#{e.timestamp.yellow} #{e.level.red} "
+  output = "#{e.timestamp} #{e.level} "
 
   if e.message is 'timepoint'
     if !_.contains TIMEPOINT_BLACKLIST, e.mdc?['timepoint-id']
@@ -105,7 +104,7 @@ print_event = (e) ->
     output += e.message
     output += JSON.stringify e.mdc
 
-  console.log output
+  output
 
 
 
