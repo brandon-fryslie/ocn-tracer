@@ -8,6 +8,8 @@
   "dependencies": {
     "coffee-script": "^1.9.2",
     "electron-prebuilt": "^0.25.1",
+    "event-stream": "^3.3.0",
+    "lodash": "^3.7.0",
     "space-pen": "^5.1.1"
   }
 }

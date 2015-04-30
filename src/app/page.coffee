@@ -3,5 +3,9 @@ path = require 'path'
 {$} = require 'space-pen'
 
 module.exports = class Page
-  render: (data) ->
-    $('body').html
+  constructor: ({@tracer}) ->
+    console.log 'tracer', @tracer
+    @tracer.set_render @render
+    @render 'loading page...'
+  render: (str) ->
+    $('body').html str
